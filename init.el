@@ -23,6 +23,7 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
 (setq make-backup-file nil)
+(setq auto-save-default nil)
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
