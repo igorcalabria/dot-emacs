@@ -42,6 +42,13 @@
   (setq magit-last-seen-setup-instructions "1.4.0")
   )
 
+(use-package eyebrowse
+  :config
+  (progn
+    (eyebrowse-mode t)
+    )
+  )
+
 (use-package helm
   :ensure t
   :diminish helm-mode
@@ -127,9 +134,21 @@
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
           "b p" 'evil-prev-buffer
-          "w v" 'split-window-horizontally
-          "w h" 'split-window-vertically
+          "s v" 'split-window-horizontally
+          "s h" 'split-window-vertically
           "g" 'magit-status
+          "w q" 'eyebrowse-close-window-config
+          "w n" 'eyebrowse-next-window-config
+          "w p" 'eyebrowse-prev-window-config
+          "w 1" 'eyebrowse-switch-to-window-config-1
+          "w 2" 'eyebrowse-switch-to-window-config-2
+          "w 3" 'eyebrowse-switch-to-window-config-3
+          "w 4" 'eyebrowse-switch-to-window-config-4
+          "w 5" 'eyebrowse-switch-to-window-config-5
+          "w 6" 'eyebrowse-switch-to-window-config-6
+          "w 7" 'eyebrowse-switch-to-window-config-7
+          "w 8" 'eyebrowse-switch-to-window-config-8
+          "w 9" 'eyebrowse-switch-to-window-config-9
           )
         (evil-leader/set-key-for-mode 'js-mode
           "t" 'my-js-run-test
@@ -139,6 +158,7 @@
     (evil-mode 1))
   :config
   (progn
+    (evil-set-initial-state 'help-mode 'normal)
     (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
     (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
 
