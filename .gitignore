@@ -1,5 +1,6 @@
 *.dat
 elpa/
+eshell/
 *.eld
 recentf
 *~
