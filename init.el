@@ -119,6 +119,12 @@
   (process-send-string "*js*" "npm test \n")
   )
 
+(defun my-new-project-file (new_file)
+  (interactive
+   (list (read-file-name "New file: " (projectile-project-root))))
+  (find-file new_file)
+  )
+
 (use-package evil
   :init
   (progn
