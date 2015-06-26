@@ -15,9 +15,26 @@
 
 (require 'use-package)
 
+;;General config
+(scroll-bar-mode -1)
+(setq ring-bell-function 'ignore)
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq make-backup-file nil)
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+(tool-bar-mode -1)
+(load-theme 'solarized-light t)
+(electric-pair-mode t)
+(show-paren-mode t)
+(setq org-src-fontify-natively t)
+(setq org-startup-indented t)
+
 (use-package coffe-mode)
 (use-package evil)
 (use-package helm-ag)
+(use-package magit)
 
 (use-package helm
   :ensure t
@@ -32,8 +49,8 @@
     (setq helm-apropos-fuzzy-match t)
     (setq helm-lisp-fuzzy-completion t)
     (define-key helm-map (kbd "C-z") 'helm-select-action)
-    (define-key helm-map (kbd "C-h") 'my-helm-split)
-    (define-key helm-map (kbd "C-v") 'my-helm-vsplit)
+    (define-key helm-map (kbd "C-c x") 'my-helm-split)
+    (define-key helm-map (kbd "C-c v") 'my-helm-vsplit)
     (define-key helm-map (kbd "C-j") 'helm-next-line)
     (define-key helm-map (kbd "C-k") 'helm-previous-line))
   )
@@ -65,26 +82,6 @@
     (ac-set-trigger-key "<tab>")
     )
   )
-;;General config
-(scroll-bar-mode -1)
-(setq ring-bell-function 'ignore)
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq make-backup-file nil)
-(require 'recentf)
-(recentf-mode 1)
-(setq recentf-max-menu-items 25)
-(tool-bar-mode -1)
-(load-theme 'solarized-light t)
-(electric-pair-mode t)
-(show-paren-mode t)
-(setq org-src-fontify-natively t)
-(setq org-startup-indented t)
-
-;; Yas
-;; Autocomplete
-
-;; Projectile
 
 ;; HELM
 (defun my-helm-split ()
@@ -119,7 +116,7 @@
           "b n" 'evil-next-buffer
           "b p" 'evil-prev-buffer
           "w v" 'split-window-horizontally
-          "w s" 'split-window-vertically
+          "w h" 'split-window-vertically
           )
         )
       )
