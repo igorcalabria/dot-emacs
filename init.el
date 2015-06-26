@@ -125,6 +125,11 @@
   (find-file new_file)
   )
 
+(defun my-rspec-file ()
+  (interactive)
+  (process-send-string "*rspec*" (concat "rspec " (buffer-file-name) "\n"))
+  )
+
 (use-package evil
   :init
   (progn
@@ -145,21 +150,24 @@
           "s v" 'split-window-horizontally
           "s h" 'split-window-vertically
           "g" 'magit-status
-          "w q" 'eyebrowse-close-window-config
-          "w n" 'eyebrowse-next-window-config
-          "w p" 'eyebrowse-prev-window-config
-          "w 1" 'eyebrowse-switch-to-window-config-1
-          "w 2" 'eyebrowse-switch-to-window-config-2
-          "w 3" 'eyebrowse-switch-to-window-config-3
-          "w 4" 'eyebrowse-switch-to-window-config-4
-          "w 5" 'eyebrowse-switch-to-window-config-5
-          "w 6" 'eyebrowse-switch-to-window-config-6
-          "w 7" 'eyebrowse-switch-to-window-config-7
-          "w 8" 'eyebrowse-switch-to-window-config-8
-          "w 9" 'eyebrowse-switch-to-window-config-9
+
+          "q" 'eyebrowse-close-window-config
+
+          "1" 'eyebrowse-switch-to-window-config-1
+          "2" 'eyebrowse-switch-to-window-config-2
+          "3" 'eyebrowse-switch-to-window-config-3
+          "4" 'eyebrowse-switch-to-window-config-4
+          "5" 'eyebrowse-switch-to-window-config-5
+          "6" 'eyebrowse-switch-to-window-config-6
+          "7" 'eyebrowse-switch-to-window-config-7
+          "8" 'eyebrowse-switch-to-window-config-8
+          "9" 'eyebrowse-switch-to-window-config-9
           )
         (evil-leader/set-key-for-mode 'js-mode
           "t" 'my-js-run-test
+          )
+        (evil-leader/set-key-for-mode 'ruby-mode
+          "t" 'my-rspec-file
           )
         )
       )
