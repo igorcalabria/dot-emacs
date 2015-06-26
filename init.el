@@ -13,7 +13,9 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(require 'use-package)
+(eval-when-compile
+  (require 'use-package))
+(require 'diminish)
 
 ;;General config
 (scroll-bar-mode -1)
@@ -117,6 +119,7 @@
           "b p" 'evil-prev-buffer
           "w v" 'split-window-horizontally
           "w h" 'split-window-vertically
+          "g" 'magit-status
           )
         )
       )
