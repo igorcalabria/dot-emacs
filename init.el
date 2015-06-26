@@ -33,10 +33,13 @@
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
 
-(use-package coffe-mode)
+(use-package coffee-mode)
 (use-package evil)
 (use-package helm-ag)
-(use-package magit)
+(use-package magit
+  :init
+  (setq magit-last-seen-setup-instructions "1.4.0")
+  )
 
 (use-package helm
   :ensure t
@@ -100,6 +103,12 @@
                                      (split-window-horizontally)
                                      (find-file file)
                                      ))))
+;; Gheto
+(defun my-js-run-test ()
+  (interactive)
+  (process-send-string "*js*" "npm test \n")
+  )
+
 (use-package evil
   :init
   (progn
@@ -120,6 +129,9 @@
           "w v" 'split-window-horizontally
           "w h" 'split-window-vertically
           "g" 'magit-status
+          )
+        (evil-leader/set-key-for-mode 'js-mode
+          "t" 'my-js-run-test
           )
         )
       )
