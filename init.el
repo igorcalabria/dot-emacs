@@ -31,6 +31,7 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+(setq require-final-newline t)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (tool-bar-mode -1)
@@ -156,6 +157,7 @@
           "s v" 'split-window-horizontally
           "s h" 'split-window-vertically
           "g" 'magit-status
+          "/" 'helm-projectile-ag
 
           "q" 'eyebrowse-close-window-config
 
