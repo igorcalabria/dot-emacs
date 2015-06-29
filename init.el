@@ -189,5 +189,17 @@
     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+
+    (use-package git-timemachine
+      :config
+      (progn
+        (evil-set-initial-state 'git-timemachine-mode 'normal)
+        (evil-define-key 'normal git-timemachine-mode-map
+          (kbd "n") 'git-timemachine-show-next-revision
+          (kbd "N") 'git-timemachine-show-previous-revision
+          (kbd "q") 'git-timemachine-quit
+          )
+        )
+      )
     )
   )
