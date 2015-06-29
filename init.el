@@ -34,6 +34,11 @@
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
 
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
 (use-package coffee-mode)
 (use-package evil)
 (use-package helm-ag)
@@ -116,7 +121,7 @@
 ;; Gheto
 (defun my-js-run-test ()
   (interactive)
-  (process-send-string "*js*" "npm test \n")
+  (process-send-string "*js-test*" "npm test \n")
   )
 
 (defun my-new-project-file (new_file)
