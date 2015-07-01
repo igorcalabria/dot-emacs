@@ -26,11 +26,6 @@
 (setq auto-save-default nil)
 (require 'recentf)
 
-(require 'whitespace)
-(setq whitespace-line-column 80) ;; limit line length
-(setq whitespace-style '(face lines-tail))
-(add-hook 'prog-mode-hook 'whitespace-mode)
-
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (tool-bar-mode -1)
