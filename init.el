@@ -161,6 +161,7 @@
           "s v" 'split-window-horizontally
           "s h" 'split-window-vertically
           "g" 'magit-status
+          "/" 'helm-projectile-ag
 
           "q" 'eyebrowse-close-window-config
 
