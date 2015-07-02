@@ -22,7 +22,7 @@
 (setq ring-bell-function 'ignore)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(setq make-backup-file nil)
+(setq make-backup-files nil)
 (setq auto-save-default nil)
 (require 'recentf)
 
