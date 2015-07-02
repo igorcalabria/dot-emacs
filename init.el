@@ -41,9 +41,20 @@
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
 
+(require 'whitespace)
+(setq whitespace-line-column 80) ;; limit line length
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
+
 (use-package coffee-mode)
 (use-package evil)
 (use-package helm-ag)
+
+(use-package yasnippet
+  :config
+  (yas-global-mode t)
+  )
+
 (use-package magit
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
@@ -95,14 +106,12 @@
     (helm-projectile-on)
     )
   )
-(use-package auto-complete
-  :ensure t
+
+(use-package company
   :config
-  (progn
-    (ac-config-default)
-    (ac-set-trigger-key "TAB")
-    (ac-set-trigger-key "<tab>")
-    )
+  (add-hook 'after-init-hook 'global-company-mode)
+  (define-key company-active-map (kbd "C-j") 'company-select-next)
+  (define-key company-active-map (kbd "C-k") 'company-select-previous)
   )
 
 ;; HELM
@@ -123,7 +132,7 @@
 ;; Gheto
 (defun my-js-run-test ()
   (interactive)
-  (process-send-string "*js*" "npm test \n")
+  (process-send-string "*js-test*" "npm test \n")
   )
 
 (defun my-new-project-file (new_file)
@@ -192,6 +201,8 @@
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 
+    (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
+    (define-key evil-insert-state-map (kbd "C-c y") 'company-yasnippet)
     (use-package git-timemachine
       :config
       (progn
