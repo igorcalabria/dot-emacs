@@ -22,7 +22,7 @@
 (setq ring-bell-function 'ignore)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 2)
-(setq make-backup-file nil)
+(setq make-backup-files nil)
 (setq auto-save-default nil)
 (require 'recentf)
 
@@ -40,6 +40,14 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+(use-package fringe-helper)
+(use-package git-gutter-fringe
+  :config
+  (set-face-foreground 'git-gutter-fr:added "forest green")
+  (set-face-foreground 'git-gutter-fr:deleted "dark red")
+  (set-face-foreground 'git-gutter-fr:modified "goldenrod")
+  (global-git-gutter-mode t)
+  )
 (use-package coffee-mode)
 (use-package evil)
 (use-package helm-ag)
