@@ -88,7 +88,8 @@
     (define-key helm-map (kbd "C-c x") 'my-helm-split)
     (define-key helm-map (kbd "C-c v") 'my-helm-vsplit)
     (define-key helm-map (kbd "C-j") 'helm-next-line)
-    (define-key helm-map (kbd "C-k") 'helm-previous-line))
+    (define-key helm-map (kbd "C-k") 'helm-previous-line)
+    )
   )
 
 (use-package projectile
@@ -184,7 +185,7 @@
           "g" 'magit-status
           "/" 'helm-projectile-ag
 
-          "q" 'eyebrowse-close-window-config
+          "q" 'quit-window
 
           "1" 'eyebrowse-switch-to-window-config-1
           "2" 'eyebrowse-switch-to-window-config-2
