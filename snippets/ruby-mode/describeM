@@ -1,0 +1,7 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: describeM
+# key: descm
+# --
+describe "${1:description}" do
+$0
+end
