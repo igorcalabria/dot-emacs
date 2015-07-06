@@ -34,6 +34,7 @@
 (show-paren-mode t)
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
+(add-hook 'prog-mode-hook (lambda() (linum-mode)))
 
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
