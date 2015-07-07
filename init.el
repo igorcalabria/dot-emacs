@@ -5,7 +5,9 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("org" . "http://orgmode.org/elpa/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")))
+                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+                         ))
 (package-initialize)
 
 ;; Bootstrap `use-package'
@@ -220,6 +222,10 @@
 
     (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
     (define-key evil-insert-state-map (kbd "C-c y") 'company-yasnippet)
+    (use-package evil-surround
+      :config
+      (global-evil-surround-mode t)
+      )
     (use-package git-timemachine
       :config
       (progn
