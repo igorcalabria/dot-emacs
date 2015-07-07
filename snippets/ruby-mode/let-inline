@@ -1,0 +1,5 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: let-inline
+# key: leti
+# --
+let(:${1:var}) { $0 }
