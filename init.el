@@ -30,7 +30,6 @@
     evil-leader
     evil-surround
     inf-ruby
-    solarize-theme
     )
   "A list of packages to ensure are installed at launch.")
 
