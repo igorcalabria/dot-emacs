@@ -1,4 +1,5 @@
 (require 'package)
+(require 'cl)
 (setq package-enable-at-startup nil)
 
 ;; packages
@@ -14,6 +15,39 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+(defvar prelude-packages
+  '(fringe-helper
+    coffee-mode
+    evil
+    helm-ag
+    yasnippet
+    magit
+    eyebrowse
+    helm
+    projectile
+    company
+    evil-leader
+    evil-surround
+    inf-ruby
+    solarize-theme
+    )
+  "A list of packages to ensure are installed at launch.")
+
+(defun prelude-packages-installed-p ()
+  (loop for p in prelude-packages
+        when (not (package-installed-p p)) do (return nil)
+        finally (return t)))
+
+(unless (prelude-packages-installed-p)
+  ;; check for new packages (package versions)
+  (message "%s" "Emacs Prelude is now refreshing its package database...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ;; install the missing packages
+  (dolist (p prelude-packages)
+    (when (not (package-installed-p p))
+      (package-install p))))
 
 (eval-when-compile
   (require 'use-package))
