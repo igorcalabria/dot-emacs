@@ -32,6 +32,9 @@
     inf-ruby
     zenburn-theme
     restclient
+    git-gutter-fringe
+    web-mode
+    rspec-mode
     )
   "A list of packages to ensure are installed at launch.")
 
