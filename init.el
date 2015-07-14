@@ -72,6 +72,7 @@
 (add-hook 'prog-mode-hook (lambda() (linum-mode)))
 (set-face-attribute 'default nil
                     :family "Consolas" :height 140 :weight 'normal)
+(blink-cursor-mode 0)
 
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
