@@ -35,6 +35,7 @@
     git-gutter-fringe
     web-mode
     rspec-mode
+    rvm
     )
   "A list of packages to ensure are installed at launch.")
 
