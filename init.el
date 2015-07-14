@@ -31,6 +31,7 @@
     evil-surround
     inf-ruby
     zenburn-theme
+    restclient
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -113,6 +114,7 @@
   (set-face-foreground 'git-gutter-fr:modified "goldenrod")
   (global-git-gutter-mode t)
   )
+(use-package restclient)
 (use-package coffee-mode)
 (use-package evil)
 (use-package helm-ag)
