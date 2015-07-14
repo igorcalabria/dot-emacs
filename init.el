@@ -30,6 +30,7 @@
     evil-leader
     evil-surround
     inf-ruby
+    zenburn-theme
     )
   "A list of packages to ensure are installed at launch.")
 
@@ -64,7 +65,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (tool-bar-mode -1)
-(load-theme 'solarized-light t)
+(load-theme 'zenburn t)
 (electric-pair-mode t)
 (show-paren-mode t)
 (setq org-src-fontify-natively t)
