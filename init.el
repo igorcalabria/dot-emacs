@@ -112,6 +112,7 @@
 
 (use-package fringe-helper)
 (use-package git-gutter-fringe
+  :diminish git-gutter-mode
   :config
   (set-face-foreground 'git-gutter-fr:added "forest green")
   (set-face-foreground 'git-gutter-fr:deleted "dark red")
@@ -124,6 +125,7 @@
 (use-package helm-ag)
 
 (use-package yasnippet
+  :diminish yas-minor-mode
   :config
   (yas-global-mode t)
   )
@@ -163,6 +165,7 @@
 
 (use-package projectile
   :ensure t
+  :diminish projectile-mode
   :init
   (setq projectile-completion-system 'helm)
   :config
@@ -181,6 +184,7 @@
   )
 
 (use-package company
+  :diminish company-mode
   :config
   (defvar company-mode/enable-yas t
     "Enable yasnippet for all backends.")
