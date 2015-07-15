@@ -231,7 +231,7 @@
           "f f" 'helm-find-files
           "p f" 'helm-projectile-find-file
           "p p" 'projectile-switch-project
-          "r" 'helm-recentf
+          "f r" 'helm-recentf
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
           "b p" 'evil-prev-buffer
@@ -251,12 +251,6 @@
           "7" 'eyebrowse-switch-to-window-config-7
           "8" 'eyebrowse-switch-to-window-config-8
           "9" 'eyebrowse-switch-to-window-config-9
-          )
-        (evil-leader/set-key-for-mode 'js-mode
-          "t" 'my-js-run-test
-          )
-        (evil-leader/set-key-for-mode 'ruby-mode
-          "t" 'my-rspec-file
           )
         )
       )
