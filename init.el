@@ -16,44 +16,6 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(defvar prelude-packages
-  '(fringe-helper
-    coffee-mode
-    evil
-    helm-ag
-    yasnippet
-    magit
-    eyebrowse
-    helm
-    projectile
-    company
-    evil-leader
-    evil-surround
-    inf-ruby
-    zenburn-theme
-    restclient
-    git-gutter-fringe
-    web-mode
-    rspec-mode
-    rvm
-    )
-  "A list of packages to ensure are installed at launch.")
-
-(defun prelude-packages-installed-p ()
-  (loop for p in prelude-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
-
-(unless (prelude-packages-installed-p)
-  ;; check for new packages (package versions)
-  (message "%s" "Emacs Prelude is now refreshing its package database...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; install the missing packages
-  (dolist (p prelude-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
-
 (eval-when-compile
   (require 'use-package))
 (require 'diminish)
@@ -70,7 +32,6 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (tool-bar-mode -1)
-(load-theme 'zenburn t)
 (electric-pair-mode t)
 (show-paren-mode t)
 (setq org-src-fontify-natively t)
@@ -86,6 +47,7 @@
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
 (use-package web-mode
+  :ensure t
   :config
   (progn
     (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -101,6 +63,7 @@
   )
 
 (use-package rspec-mode
+  :ensure t
   :config
   (defadvice rspec-compile (around rspec-compile-around)
     "Use BASH shell for running the specs because of ZSH issues."
@@ -110,8 +73,26 @@
   (add-hook 'after-init-hook 'inf-ruby-switch-setup)
   )
 
-(use-package fringe-helper)
+(use-package rvm
+  :ensure t
+  )
+
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t)
+  )
+
+(use-package inf-ruby
+  :ensure t
+  )
+
+(use-package fringe-helper
+  :ensure t
+  )
+
 (use-package git-gutter-fringe
+  :ensure t
   :diminish git-gutter-mode
   :config
   (set-face-foreground 'git-gutter-fr:added "forest green")
@@ -119,18 +100,32 @@
   (set-face-foreground 'git-gutter-fr:modified "goldenrod")
   (global-git-gutter-mode t)
   )
-(use-package restclient)
-(use-package coffee-mode)
-(use-package evil)
-(use-package helm-ag)
+
+(use-package restclient
+  :ensure t
+  )
+
+(use-package coffee-mode
+  :ensure t
+  )
+
+(use-package evil
+  :ensure t
+  )
+
+(use-package helm-ag
+  :ensure t
+  )
 
 (use-package yasnippet
+  :ensure t
   :diminish yas-minor-mode
   :config
   (yas-global-mode t)
   )
 
 (use-package magit
+  :ensure t
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
   :config
@@ -138,6 +133,7 @@
   )
 
 (use-package eyebrowse
+  :ensure t
   :config
   (progn
     (eyebrowse-mode t)
@@ -184,6 +180,7 @@
   )
 
 (use-package company
+  :ensure t
   :diminish company-mode
   :config
   (defvar company-mode/enable-yas t
@@ -240,6 +237,7 @@
   :init
   (progn
     (use-package evil-leader
+      :ensure t
       :init (global-evil-leader-mode)
       :config
       (progn
@@ -294,10 +292,12 @@
     (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
     (define-key evil-insert-state-map (kbd "C-c y") 'company-yasnippet)
     (use-package evil-surround
+      :ensure t
       :config
       (global-evil-surround-mode t)
       )
     (use-package git-timemachine
+      :ensure t
       :config
       (progn
         (evil-set-initial-state 'git-timemachine-mode 'normal)
