@@ -296,17 +296,5 @@
       :config
       (global-evil-surround-mode t)
       )
-    (use-package git-timemachine
-      :ensure t
-      :config
-      (progn
-        (evil-set-initial-state 'git-timemachine-mode 'normal)
-        (evil-define-key 'normal git-timemachine-mode-map
-          (kbd "n") 'git-timemachine-show-next-revision
-          (kbd "N") 'git-timemachine-show-previous-revision
-          (kbd "q") 'git-timemachine-quit
-          )
-        )
-      )
     )
   )
