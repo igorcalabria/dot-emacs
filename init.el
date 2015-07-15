@@ -216,22 +216,6 @@
                                      (split-window-horizontally)
                                      (find-file file)
                                      ))))
-;; Gheto
-(defun my-js-run-test ()
-  (interactive)
-  (process-send-string "*js-test*" "npm test \n")
-  )
-
-(defun my-new-project-file (new_file)
-  (interactive
-   (list (read-file-name "New file: " (projectile-project-root))))
-  (find-file new_file)
-  )
-
-(defun my-rspec-file ()
-  (interactive)
-  (process-send-string "*rspec*" (concat "rspec " (buffer-file-name) "\n"))
-  )
 
 (use-package evil
   :init
