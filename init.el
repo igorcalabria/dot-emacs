@@ -47,6 +47,10 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 
+(use-package cider
+  :ensure t
+  )
+
 (use-package web-mode
   :ensure t
   :config
