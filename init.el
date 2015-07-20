@@ -256,6 +256,7 @@
           "r r" 'ruby-send-region
           "t f" 'rspec-verify
           "t l" 'rspec-verify-single
+          "t t" 'rspec-verify-all
           )
         )
       )
