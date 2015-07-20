@@ -41,6 +41,8 @@
                     :family "Consolas" :height 140 :weight 'normal)
 (blink-cursor-mode 0)
 (setq exec-path (append exec-path '("/usr/local/bin/")))
+(setq ns-use-native-fullscreen nil) ;; Disables OSX bullshit fullscreen
+(setq inhibit-startup-message t)
 
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
@@ -287,3 +289,5 @@
       )
     )
   )
+;; FIXME: Learn why this has to be on bottom
+(toggle-frame-fullscreen)
