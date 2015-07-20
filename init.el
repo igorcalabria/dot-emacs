@@ -40,11 +40,16 @@
 (set-face-attribute 'default nil
                     :family "Consolas" :height 140 :weight 'normal)
 (blink-cursor-mode 0)
+(setq exec-path (append exec-path '("/usr/local/bin/")))
 
 (require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
+
+(use-package cider
+  :ensure t
+  )
 
 (use-package web-mode
   :ensure t
