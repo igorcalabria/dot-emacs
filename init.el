@@ -291,3 +291,10 @@
   )
 ;; FIXME: Learn why this has to be on bottom
 (toggle-frame-fullscreen)
+
+;; Gheto
+(defun my-new-project-file (new_file)
+  (interactive
+   (list (read-file-name "New file: " (projectile-project-root))))
+  (find-file new_file)
+  )
