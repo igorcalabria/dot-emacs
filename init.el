@@ -236,6 +236,7 @@
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
           "f f" 'helm-find-files
+          "f n" 'my-notes-find
           "p f" 'helm-projectile-find-file
           "p p" 'projectile-switch-project
           "f r" 'helm-recentf
@@ -302,4 +303,10 @@
   (interactive
    (list (read-file-name "New file: " (projectile-project-root))))
   (find-file new_file)
+  )
+
+(defun my-notes-find ()
+  (interactive)
+  (setq default-directory "~/Dropbox/org-notes/")
+  (helm-find-files nil)
   )
