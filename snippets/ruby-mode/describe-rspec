@@ -6,6 +6,7 @@ describe ${1:`(let ((fn (capitalize (file-name-nondirectory
                                  (file-name-sans-extension
 				 (or (buffer-file-name)
 				     (buffer-name (current-buffer))))))))
-             (replace-regexp-in-string "_" "" fn t t))`} do
+             (let ((spec-removed (replace-regexp-in-string "Spec$" "" fn t t)))
+                (replace-regexp-in-string "_" "" spec-removed t t)))`} do
 $0
 end
