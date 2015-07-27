@@ -307,6 +307,7 @@
 
 (defun my-notes-find ()
   (interactive)
-  (setq default-directory "~/Dropbox/org-notes/")
-  (helm-find-files nil)
+  (let ((default-directory "~/Dropbox/org-notes/"))
+    (helm-find-files nil)
+    )
   )
