@@ -280,6 +280,11 @@
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
 
+    (define-key evil-normal-state-map (kbd "M-k") 'org-metaup)
+    (define-key evil-normal-state-map (kbd "M-j") 'org-metadown)
+    (define-key evil-normal-state-map (kbd "M-h") 'org-metaleft)
+    (define-key evil-normal-state-map (kbd "M-l") 'org-metaright)
+
     (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
     (define-key evil-insert-state-map (kbd "C-c y") 'company-yasnippet)
     (use-package evil-surround
