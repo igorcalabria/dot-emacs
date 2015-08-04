@@ -48,6 +48,7 @@
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
+(setq ruby-insert-encoding-magic-comment nil)
 
 (use-package cider
   :ensure t
@@ -239,6 +240,7 @@
           "f n" 'my-notes-find
           "p f" 'helm-projectile-find-file
           "p p" 'projectile-switch-project
+          "p n" 'my-new-project-file
           "f r" 'helm-recentf
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
