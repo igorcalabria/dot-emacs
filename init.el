@@ -51,6 +51,14 @@
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
 
+(use-package scss-mode
+  :ensure t
+
+  :config
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
+  )
+
 (use-package cider
   :ensure t
   )
