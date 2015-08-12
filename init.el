@@ -95,20 +95,6 @@
   :ensure t
   )
 
-(use-package fringe-helper
-  :ensure t
-  )
-
-(use-package git-gutter-fringe
-  :ensure t
-  :diminish git-gutter-mode
-  :config
-  (set-face-foreground 'git-gutter-fr:added "forest green")
-  (set-face-foreground 'git-gutter-fr:deleted "dark red")
-  (set-face-foreground 'git-gutter-fr:modified "goldenrod")
-  (global-git-gutter-mode t)
-  )
-
 (use-package restclient
   :ensure t
   )
