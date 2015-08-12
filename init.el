@@ -223,6 +223,7 @@
         (evil-leader/set-leader "<SPC>")
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
+          "w w" 'other-frame
           "f f" 'helm-find-files
           "f n" 'my-notes-find
           "p f" 'helm-projectile-find-file
