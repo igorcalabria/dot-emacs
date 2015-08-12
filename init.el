@@ -49,6 +49,7 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (setq ruby-insert-encoding-magic-comment nil)
+(setq css-indent-offset 2)
 
 (use-package cider
   :ensure t
