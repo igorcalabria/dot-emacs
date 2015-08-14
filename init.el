@@ -48,6 +48,7 @@
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
 
 (use-package cider
   :ensure t
