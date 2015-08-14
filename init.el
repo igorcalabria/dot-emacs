@@ -36,7 +36,11 @@
 (show-paren-mode t)
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
-(add-hook 'prog-mode-hook (lambda() (linum-mode)))
+
+(add-hook 'prog-mode-hook 'linum-mode)
+;; CSS mode is not a prog mode
+(add-hook 'css-mode-hook 'linum-mode)
+
 (set-face-attribute 'default nil
                     :family "Consolas" :height 140 :weight 'normal)
 (blink-cursor-mode 0)
@@ -51,6 +55,14 @@
 (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
+
+(use-package diff-hl
+  :ensure t
+  :config
+
+  (add-hook 'prog-mode-hook 'diff-hl-mode)
+  (add-hook 'css-mode-hook 'diff-hl-mode)
+  )
 
 (use-package scss-mode
   :ensure t
