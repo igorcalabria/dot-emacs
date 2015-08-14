@@ -49,6 +49,16 @@
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
+(setq ruby-insert-encoding-magic-comment nil)
+(setq css-indent-offset 2)
+
+(use-package scss-mode
+  :ensure t
+
+  :config
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
+  )
 
 (use-package cider
   :ensure t
@@ -95,20 +105,6 @@
   :ensure t
   )
 
-(use-package fringe-helper
-  :ensure t
-  )
-
-(use-package git-gutter-fringe
-  :ensure t
-  :diminish git-gutter-mode
-  :config
-  (set-face-foreground 'git-gutter-fr:added "forest green")
-  (set-face-foreground 'git-gutter-fr:deleted "dark red")
-  (set-face-foreground 'git-gutter-fr:modified "goldenrod")
-  (global-git-gutter-mode t)
-  )
-
 (use-package restclient
   :ensure t
   )
@@ -153,6 +149,7 @@
   :config
   (progn
     (require 'helm-config)
+    (setq helm-split-window-in-side-p t)
     (setq helm-recentf-fuzzy-match t)
     (setq helm-buffers-fuzzy-matching t)
     (setq helm-M-x-fuzzy-match t)
@@ -236,10 +233,12 @@
         (evil-leader/set-leader "<SPC>")
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
+          "w w" 'other-frame
           "f f" 'helm-find-files
           "f n" 'my-notes-find
           "p f" 'helm-projectile-find-file
           "p p" 'projectile-switch-project
+          "p n" 'my-new-project-file
           "f r" 'helm-recentf
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
