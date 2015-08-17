@@ -44,7 +44,7 @@
 (set-face-attribute 'default nil
                     :family "Consolas" :height 140 :weight 'normal)
 (blink-cursor-mode 0)
-(setq exec-path (append exec-path '("/usr/local/bin/")))
+(add-to-list 'exec-path "/usr/local/bin")
 (setq ns-use-native-fullscreen nil) ;; Disables OSX bullshit fullscreen
 (setq inhibit-startup-message t)
 
