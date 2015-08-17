@@ -56,6 +56,10 @@
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
 
+(use-package ace-jump-mode
+  :ensure t
+  )
+
 (use-package diff-hl
   :ensure t
   :config
@@ -245,6 +249,7 @@
         (evil-leader/set-leader "<SPC>")
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
+          "a" 'ace-jump-mode
           "w w" 'other-frame
           "f f" 'helm-find-files
           "f n" 'my-notes-find
