@@ -56,6 +56,7 @@
 (add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
+(global-hl-line-mode t)
 
 (use-package ace-jump-mode
   :ensure t
