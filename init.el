@@ -42,7 +42,7 @@
 (add-hook 'css-mode-hook 'linum-mode)
 
 (set-face-attribute 'default nil
-                    :family "Source Code Pro" :height 140 :weight 'normal)
+                    :family "Consolas" :height 140 :weight 'normal)
 
 (blink-cursor-mode 0)
 (add-to-list 'exec-path "/usr/local/bin")
