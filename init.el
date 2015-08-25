@@ -176,8 +176,6 @@
     (setq helm-apropos-fuzzy-match t)
     (setq helm-lisp-fuzzy-completion t)
     (define-key helm-map (kbd "C-z") 'helm-select-action)
-    (define-key helm-map (kbd "C-c x") 'my-helm-split)
-    (define-key helm-map (kbd "C-c v") 'my-helm-vsplit)
     (define-key helm-map (kbd "C-j") 'helm-next-line)
     (define-key helm-map (kbd "C-k") 'helm-previous-line)
     )
@@ -224,22 +222,6 @@
 
   (setq company-idle-delay 0)
   )
-
-;; HELM
-(defun my-helm-split ()
-  (interactive)
-  (with-helm-alive-p
-    (helm-quit-and-execute-action '(lambda(file)
-                                     (split-window)
-                                     (find-file file)
-                                     ))))
-(defun my-helm-vsplit ()
-  (interactive)
-  (with-helm-alive-p
-    (helm-quit-and-execute-action '(lambda(file)
-                                     (split-window-horizontally)
-                                     (find-file file)
-                                     ))))
 
 (use-package evil
   :init
