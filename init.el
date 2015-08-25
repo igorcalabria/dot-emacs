@@ -234,7 +234,7 @@
         (evil-leader/set-leader "<SPC>")
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
-          "a" 'ace-jump-mode
+          "a" 'evil-ace-jump-char-mode
           "w w" 'other-frame
           "f f" 'helm-find-files
           "f n" 'my-notes-find
