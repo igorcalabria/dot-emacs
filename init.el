@@ -289,7 +289,8 @@
     (define-key evil-normal-state-map (kbd "M-l") 'org-metaright)
 
     (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
-    (define-key evil-insert-state-map (kbd "C-c y") 'company-yasnippet)
+    (define-key evil-insert-state-map (kbd "C-x C-l") 'my-expand-lines)
+
     (use-package evil-surround
       :ensure t
       :config
@@ -321,3 +322,8 @@
     (progn
       (window-configuration-to-register '_)
       (delete-other-windows))))
+
+(defun my-expand-lines ()
+  (interactive)
+  (let ((hippie-expand-try-functions-list '(try-expand-line-all-buffers)))
+    (call-interactively 'hippie-expand)))
