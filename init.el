@@ -282,10 +282,13 @@
     (define-key evil-normal-state-map (kbd "C-j") 'evil-window-down)
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
+
     (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
     (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
     (evil-define-key 'normal org-mode-map (kbd "M-h") 'org-metaleft)
     (evil-define-key 'normal org-mode-map (kbd "M-l") 'org-metaright)
+    (evil-define-key 'normal global-map (kbd "M-k") 'my-move-lines-up)
+    (evil-define-key 'normal global-map (kbd "M-j") 'my-move-lines-down)
 
     (define-key evil-normal-state-map (kbd "C-c y") 'company-yasnippet)
     (define-key evil-insert-state-map (kbd "C-x C-l") 'my-expand-lines)
@@ -326,3 +329,16 @@
   (interactive)
   (let ((hippie-expand-try-functions-list '(try-expand-line-all-buffers)))
     (call-interactively 'hippie-expand)))
+
+(defun my-move-lines-up ()
+  (interactive)
+  (transpose-lines 1)
+  (previous-line 2)
+  )
+
+(defun my-move-lines-down ()
+  (interactive)
+  (next-line)
+  (transpose-lines 1)
+  (previous-line)
+  )
