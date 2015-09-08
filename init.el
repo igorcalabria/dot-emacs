@@ -104,7 +104,7 @@
   :config
   (defadvice rspec-compile (around rspec-compile-around)
     "Use BASH shell for running the specs because of ZSH issues."
-    (let ((shell-file-name "/bin/bash"))
+    (let ((shell-file-name "/usr/local/bin/fish"))
       ad-do-it))
   (ad-activate 'rspec-compile)
   (add-hook 'after-init-hook 'inf-ruby-switch-setup)
