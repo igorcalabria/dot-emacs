@@ -58,6 +58,12 @@
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
 
+
+(use-package org-bullets
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook (lambda() (org-bullets-mode 1))))
+
 (use-package ace-jump-mode
   :ensure t
   )
