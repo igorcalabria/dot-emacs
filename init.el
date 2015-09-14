@@ -58,6 +58,11 @@
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
 
+;; Hides white vertical line on splits
+(set-face-attribute 'vertical-border
+                    nil
+                    :foreground (face-attribute 'default :background))
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
