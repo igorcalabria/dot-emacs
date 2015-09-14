@@ -58,6 +58,10 @@
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
 
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((sh . t)
+   (ruby .t)))
 
 (use-package org-bullets
   :ensure t
