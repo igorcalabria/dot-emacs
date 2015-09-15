@@ -264,6 +264,7 @@
           "s h" 'split-window-vertically
           "g" 'magit-status
           "/" 'helm-projectile-ag
+          "s f" 'helm-imenu
 
           "q" 'quit-window
 
