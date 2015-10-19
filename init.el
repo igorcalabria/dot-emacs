@@ -58,11 +58,6 @@
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
 
-;; Hides white vertical line on splits
-(set-face-attribute 'vertical-border
-                    nil
-                    :foreground (face-attribute 'default :background))
-
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
@@ -316,8 +311,13 @@
       )
     )
   )
+
 ;; FIXME: Learn why this has to be on bottom
 (toggle-frame-fullscreen)
+;; Hides white vertical line on splits
+(set-face-attribute 'vertical-border
+                    nil
+                    :foreground (face-attribute 'default :background))
 
 ;; Gheto
 (defun my-new-project-file (new_file)
