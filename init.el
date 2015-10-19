@@ -246,6 +246,7 @@
         (evil-leader/set-key
           "a" 'evil-ace-jump-char-mode
           "w w" 'other-frame
+          "w m" 'toggle-maximize-buffer
           "f f" 'helm-find-files
           "f n" 'my-notes-find
           "p f" 'helm-projectile-find-file
