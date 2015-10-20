@@ -252,6 +252,7 @@
           "p f" 'helm-projectile-find-file
           "p p" 'projectile-switch-project
           "p n" 'my-new-project-file
+          "p r" 'projectile-run-async-shell-command-in-root
           "f r" 'helm-recentf
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
