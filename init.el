@@ -65,6 +65,12 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package multi-term
+  :ensure t
+  :config
+  (setq multi-term-program "/usr/local/bin/fish")
+  )
+
 (use-package org-bullets
   :ensure t
   :config
