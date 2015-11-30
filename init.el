@@ -58,6 +58,8 @@
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
