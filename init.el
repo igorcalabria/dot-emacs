@@ -7,7 +7,6 @@
                          ("org" . "http://orgmode.org/elpa/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-                         ("melpa" . "http://melpa.org/packages/")
                          ))
 (package-initialize)
 
