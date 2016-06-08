@@ -60,14 +60,21 @@
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
-
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-(setq-default TeX-master nil)
+(setq-default fill-column 100)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
    (ruby .t)))
+
+(use-package tex-mode
+  :ensure t
+  :config
+  (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
+  (add-hook 'LaTeX-mode-hook 'flyspell-mode)
+  (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+  (setq-default TeX-master nil))
 
 (use-package org-bullets
   :ensure t
@@ -102,8 +109,6 @@
            (figwheel-sidecar.repl-api/start-figwheel!)
            (figwheel-sidecar.repl-api/cljs-repl))")
   )
-
-
 
 (use-package web-mode
   :ensure t
