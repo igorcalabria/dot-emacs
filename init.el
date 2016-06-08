@@ -68,6 +68,12 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package nyan-mode
+  :ensure t
+  :config
+  (nyan-mode)
+  )
+
 (use-package tex-mode
   :ensure t
   :config
