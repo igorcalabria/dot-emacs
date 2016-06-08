@@ -329,8 +329,6 @@
     )
   )
 
-;; FIXME: Learn why this has to be on bottom
-(toggle-frame-fullscreen)
 ;; Hides white vertical line on splits
 (set-face-attribute 'vertical-border
                     nil
