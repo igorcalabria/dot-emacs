@@ -3,11 +3,12 @@
 (setq package-enable-at-startup nil)
 
 ;; packages
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("org" . "http://orgmode.org/elpa/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa-stable" . "http://melpa-stable.milkbox.net/packages/")
-                         ))
+(add-to-list
+ 'package-archives
+ '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list
+ 'package-archives
+ '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
 ;; Bootstrap `use-package'
@@ -31,6 +32,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (tool-bar-mode -1)
+(menu-bar-mode -1)
 (electric-pair-mode t)
 (show-paren-mode t)
 (setq org-src-fontify-natively t)
@@ -41,10 +43,12 @@
 (add-hook 'css-mode-hook 'linum-mode)
 
 (set-face-attribute 'default nil
-                    :family "Consolas" :height 140 :weight 'normal)
+                    :family "Consolas" :height 120 :weight 'normal)
 
 (blink-cursor-mode 0)
 (add-to-list 'exec-path "/usr/local/bin")
+(add-to-list 'exec-path "~/bin")
+(setenv "PATH" (concat (getenv "PATH") ":~/bin"))
 (setq ns-use-native-fullscreen nil) ;; Disables OSX bullshit fullscreen
 (setq inhibit-startup-message t)
 
@@ -58,17 +62,12 @@
 (global-hl-line-mode t)
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default TeX-master nil)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
    (ruby .t)))
-
-(use-package multi-term
-  :ensure t
-  :config
-  (setq multi-term-program "/usr/local/bin/fish")
-  )
 
 (use-package org-bullets
   :ensure t
@@ -97,7 +96,14 @@
 
 (use-package cider
   :ensure t
+  :config
+  (setq cider-cljs-lein-repl
+      "(do (require 'figwheel-sidecar.repl-api)
+           (figwheel-sidecar.repl-api/start-figwheel!)
+           (figwheel-sidecar.repl-api/cljs-repl))")
   )
+
+
 
 (use-package web-mode
   :ensure t
@@ -121,7 +127,7 @@
   :config
   (defadvice rspec-compile (around rspec-compile-around)
     "Use BASH shell for running the specs because of ZSH issues."
-    (let ((shell-file-name "/usr/local/bin/fish"))
+    (let ((shell-file-name "/bin/bash"))
       ad-do-it))
   (ad-activate 'rspec-compile)
   (add-hook 'after-init-hook 'inf-ruby-switch-setup)
@@ -138,10 +144,6 @@
   )
 
 (use-package inf-ruby
-  :ensure t
-  )
-
-(use-package restclient
   :ensure t
   )
 
@@ -237,7 +239,7 @@
   (define-key company-active-map (kbd "C-j") 'company-select-next)
   (define-key company-active-map (kbd "C-k") 'company-select-previous)
 
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.4)
   )
 
 (use-package evil
