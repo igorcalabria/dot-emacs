@@ -44,8 +44,8 @@
 
 (set-face-attribute 'default nil
                     :family "Consolas" :height 120 :weight 'normal)
-
 (blink-cursor-mode 0)
+
 (add-to-list 'exec-path "/usr/local/bin")
 (add-to-list 'exec-path "~/bin")
 (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
@@ -156,11 +156,10 @@
   :ensure t
   )
 
-(use-package zenburn-theme
+(use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'zenburn t)
-  )
+  (load-theme 'solarized-light t))
 
 (use-package inf-ruby
   :ensure t
