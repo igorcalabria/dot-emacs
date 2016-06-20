@@ -86,6 +86,11 @@
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
   (setq reftex-plug-into-AUCTeX t)
+  (setq font-latex-user-keyword-classes
+        '(
+          ("autoref" (("autoref" "{")) font-lock-constant-face command)
+          ("citeonline" (("citeonline" "{")) font-lock-constant-face command)
+          ))
   (setq reftex-external-file-finders
         '(("tex" . "kpsewhich -format=.tex %f")
           ("bib" . "kpsewhich -format=.bib %f"))))
