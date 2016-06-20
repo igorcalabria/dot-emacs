@@ -114,7 +114,6 @@
 
 (use-package scss-mode
   :ensure t
-
   :config
   (progn
     (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
