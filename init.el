@@ -74,8 +74,6 @@
 
 (use-package nyan-mode
   :ensure t
-  :config
-  (nyan-mode)
   )
 
 (use-package tex-mode
