@@ -68,6 +68,10 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package clj-refactor
+  :ensure t
+  )
+
 (use-package nyan-mode
   :ensure t
   :config
