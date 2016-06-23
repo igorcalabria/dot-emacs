@@ -120,7 +120,6 @@
   :config
   (add-hook 'prog-mode-hook 'diff-hl-mode)
   (add-hook 'css-mode-hook 'diff-hl-mode)
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   )
 
 (use-package scss-mode
