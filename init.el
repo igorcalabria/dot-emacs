@@ -134,7 +134,7 @@
   :ensure t
   :config
   (setq cider-cljs-lein-repl
-      "(do (require 'figwheel-sidecar.repl-api)
+        "(do (require 'figwheel-sidecar.repl-api)
            (figwheel-sidecar.repl-api/start-figwheel!)
            (figwheel-sidecar.repl-api/cljs-repl))")
   )
@@ -377,12 +377,12 @@
   )
 
 (defun toggle-maximize-buffer () "Maximize buffer"
-  (interactive)
-  (if (= 1 (length (window-list)))
-      (jump-to-register '_)
-    (progn
-      (window-configuration-to-register '_)
-      (delete-other-windows))))
+       (interactive)
+       (if (= 1 (length (window-list)))
+           (jump-to-register '_)
+         (progn
+           (window-configuration-to-register '_)
+           (delete-other-windows))))
 
 (defun my-expand-lines ()
   (interactive)
