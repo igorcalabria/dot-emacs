@@ -79,6 +79,19 @@
 (use-package tex-mode
   :ensure t
   :config
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (auto-fill-mode)
+              (flyspell-mode)
+              (turn-on-reftex)
+              (TeX-add-style-hook
+               "abntex2cite"
+               (lambda ()
+                 (TeX-add-symbols
+                  '("citeonline" TeX-arg-cite)
+                  )
+                 ))
+              ))
   (add-hook 'LaTeX-mode-hook 'auto-fill-mode)
   (add-hook 'LaTeX-mode-hook 'flyspell-mode)
   (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
@@ -86,13 +99,6 @@
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
   (setq reftex-plug-into-AUCTeX t)
-  (TeX-add-style-hook
-   "abntex2cite"
-   (lambda ()
-     (TeX-add-symbols
-      '("citeonline" TeX-arg-cite)
-      )
-     ))
   (setq font-latex-user-keyword-classes
         '(
           ("autoref" (("autoref" "{")) font-lock-constant-face command)
