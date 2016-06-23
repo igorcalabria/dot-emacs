@@ -51,8 +51,6 @@
 (setenv "PATH" (concat (getenv "PATH") ":~/bin"))
 (setq ns-use-native-fullscreen nil) ;; Disables OSX bullshit fullscreen
 (setq inhibit-startup-message t)
-
-(require 'whitespace)
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
