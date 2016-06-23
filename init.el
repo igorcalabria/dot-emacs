@@ -86,6 +86,13 @@
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
   (setq reftex-plug-into-AUCTeX t)
+  (TeX-add-style-hook
+   "abntex2cite"
+   (lambda ()
+     (TeX-add-symbols
+      '("citeonline" TeX-arg-cite)
+      )
+     ))
   (setq font-latex-user-keyword-classes
         '(
           ("autoref" (("autoref" "{")) font-lock-constant-face command)
