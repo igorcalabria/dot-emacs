@@ -341,10 +341,10 @@
                     :foreground (face-attribute 'default :background))
 
 ;; Gheto
-(defun my-new-project-file (new_file)
+(defun my-new-project-file (new-file)
   (interactive
    (list (read-file-name "New file: " (projectile-project-root))))
-  (find-file new_file)
+  (find-file new-file)
   )
 
 (defun my-notes-find ()
