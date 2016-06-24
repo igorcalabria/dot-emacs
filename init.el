@@ -395,7 +395,8 @@
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "evince %s"))))
- '(reftex-ref-style-default-list (quote ("Default" "Hyperref"))))
+ '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
+ '(safe-local-variable-values (quote ((ispell-dictionary . "pt_BR")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
