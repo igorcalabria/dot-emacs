@@ -277,7 +277,8 @@
         (evil-leader/set-leader "<SPC>")
         (evil-leader/set-key ":" 'helm-M-x)
         (evil-leader/set-key
-          "a" 'evil-ace-jump-char-mode
+          "a w" `evil-ace-jump-word-mode
+          "a a" 'evil-ace-jump-char-mode
           "w w" 'other-frame
           "w m" 'toggle-maximize-buffer
           "w c" 'delete-other-windows
