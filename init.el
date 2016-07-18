@@ -199,7 +199,7 @@
   :ensure t
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
-  (setq magit-diff-refine-hunk t)
+  (setq magit-diff-refine-hunk 'all)
   :config
   (define-key magit-mode-map (kbd "N") 'magit-section-backward)
   )
