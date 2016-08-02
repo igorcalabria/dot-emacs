@@ -295,8 +295,6 @@
           "g" 'magit-status
           "/" 'helm-projectile-ag
           "s f" 'helm-imenu
-
-          "q" 'quit-window
           )
         (evil-leader/set-key-for-mode 'ruby-mode
           "r r" 'ruby-send-region
