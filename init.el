@@ -71,6 +71,9 @@
   :config
   (setq helm-dash-common-docsets '("Clojure" "Ruby on Rails" "Ruby")))
 
+(use-package neotree
+  :ensure t)
+
 (use-package clj-refactor
   :ensure t
   )
