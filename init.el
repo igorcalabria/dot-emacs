@@ -66,6 +66,11 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package helm-dash
+  :ensure t
+  :config
+  (setq helm-dash-common-docsets '("Clojure" "Ruby on Rails" "Ruby")))
+
 (use-package clj-refactor
   :ensure t
   )
