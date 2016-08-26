@@ -61,6 +61,8 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default fill-column 100)
 
+(add-hook 'org-mode-hook 'auto-fill-mode)
+
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
