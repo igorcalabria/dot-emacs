@@ -43,7 +43,7 @@
 (add-hook 'css-mode-hook 'linum-mode)
 
 (set-face-attribute 'default nil
-                    :family "Consolas" :height 120 :weight 'normal)
+                    :family "DejaVuSansMono" :height 110 :weight 'normal)
 (blink-cursor-mode 0)
 
 (add-to-list 'exec-path "/usr/local/bin")
