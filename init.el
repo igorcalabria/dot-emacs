@@ -307,6 +307,7 @@
     (evil-define-key 'normal org-mode-map (kbd "M-l") 'org-metaright)
     (evil-define-key 'normal global-map (kbd "M-k") 'my-move-lines-up)
     (evil-define-key 'normal global-map (kbd "M-j") 'my-move-lines-down)
+    (evil-set-initial-state 'term-mode 'emacs)
 
     (use-package evil-surround
       :ensure t
