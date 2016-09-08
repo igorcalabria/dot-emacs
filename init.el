@@ -54,7 +54,9 @@
 (setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face lines-tail))
 (add-hook 'prog-mode-hook 'whitespace-mode)
-(add-hook 'term-mode-hook (lambda () (yas-minor-mode -1)))
+(add-hook 'term-mode-hook (lambda ()
+                            (setq bidi-paragraph-direction 'left-to-right)
+                            (yas-minor-mode -1)))
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
