@@ -68,6 +68,9 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package dash
+  :ensure t)
+
 (use-package clj-refactor
   :ensure t
   )
