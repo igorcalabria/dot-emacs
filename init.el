@@ -73,6 +73,11 @@
  '((sh . t)
    (ruby .t)))
 
+(use-package multi-term
+  :ensure t
+  :config
+  (setq-default multi-term-dedicated-select-after-open-p t))
+
 (use-package dash
   :ensure t)
 
@@ -81,7 +86,6 @@
 
 (use-package nyan-mode
   :ensure t)
-
 (use-package tex-mode
   :ensure t
   :config
@@ -281,8 +285,7 @@
           "/" 'helm-projectile-ag
           "s f" 'helm-imenu
           "m t" 'what-year-is-it?
-
-          "q" 'quit-window)
+          "q q" 'multi-term-dedicated-toggle)
         (evil-leader/set-key-for-mode 'ruby-mode
           "r r" 'ruby-send-region
           "t f" 'rspec-verify
