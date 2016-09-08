@@ -72,12 +72,10 @@
   :ensure t)
 
 (use-package clj-refactor
-  :ensure t
-  )
+  :ensure t)
 
 (use-package nyan-mode
-  :ensure t
-  )
+  :ensure t)
 
 (use-package tex-mode
   :ensure t
@@ -91,19 +89,16 @@
                "abntex2cite"
                (lambda ()
                  (TeX-add-symbols
-                  '("citeonline" TeX-arg-cite)
-                  )
-                 ))
-              ))
+                  '("citeonline" TeX-arg-cite))))))
+
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
   (setq reftex-plug-into-AUCTeX t)
   (setq font-latex-user-keyword-classes
-        '(
-          ("autoref" (("autoref" "{")) font-lock-constant-face command)
-          ("citeonline" (("citeonline" "{")) font-lock-constant-face command)
-          ))
+        '(("autoref" (("autoref" "{")) font-lock-constant-face command)
+          ("citeonline" (("citeonline" "{")) font-lock-constant-face command)))
+
   (setq reftex-external-file-finders
         '(("tex" . "kpsewhich -format=.tex %f")
           ("bib" . "kpsewhich -format=.bib %f"))))
@@ -114,22 +109,19 @@
   (add-hook 'org-mode-hook (lambda() (org-bullets-mode 1))))
 
 (use-package ace-jump-mode
-  :ensure t
-  )
+  :ensure t)
 
 (use-package diff-hl
   :ensure t
   :config
   (add-hook 'prog-mode-hook 'diff-hl-mode)
-  (add-hook 'css-mode-hook 'diff-hl-mode)
-  )
+  (add-hook 'css-mode-hook 'diff-hl-mode))
 
 (use-package scss-mode
   :ensure t
   :config
   (progn
-    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode)))
-  )
+    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))))
 
 (use-package cider
   :ensure t
@@ -137,8 +129,7 @@
   (setq cider-cljs-lein-repl
         "(do (require 'figwheel-sidecar.repl-api)
            (figwheel-sidecar.repl-api/start-figwheel!)
-           (figwheel-sidecar.repl-api/cljs-repl))")
-  )
+           (figwheel-sidecar.repl-api/cljs-repl))"))
 
 (use-package web-mode
   :ensure t
@@ -153,9 +144,7 @@
     (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
     (add-to-list 'auto-mode-alist '("\\.hbs\\'" . web-mode))
 
-    (setq web-mode-markup-indent-offset 2)
-    )
-  )
+    (setq web-mode-markup-indent-offset 2)))
 
 (use-package rspec-mode
   :ensure t
@@ -165,12 +154,10 @@
     (let ((shell-file-name "/bin/bash"))
       ad-do-it))
   (ad-activate 'rspec-compile)
-  (add-hook 'after-init-hook 'inf-ruby-switch-setup)
-  )
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
 (use-package rvm
-  :ensure t
-  )
+  :ensure t)
 
 (use-package solarized-theme
   :ensure t
@@ -178,27 +165,22 @@
   (load-theme 'solarized-light t))
 
 (use-package inf-ruby
-  :ensure t
-  )
+  :ensure t)
 
 (use-package coffee-mode
-  :ensure t
-  )
+  :ensure t)
 
 (use-package evil
-  :ensure t
-  )
+  :ensure t)
 
 (use-package helm-ag
-  :ensure t
-  )
+  :ensure t)
 
 (use-package yasnippet
   :ensure t
   :diminish yas-minor-mode
   :config
-  (yas-global-mode t)
-  )
+  (yas-global-mode t))
 
 (use-package magit
   :ensure t
@@ -206,8 +188,7 @@
   (setq magit-last-seen-setup-instructions "1.4.0")
   (setq magit-diff-refine-hunk t)
   :config
-  (define-key magit-mode-map (kbd "N") 'magit-section-backward)
-  )
+  (define-key magit-mode-map (kbd "N") 'magit-section-backward))
 
 (use-package helm
   :ensure t
@@ -223,9 +204,7 @@
     (setq helm-lisp-fuzzy-completion t)
     (define-key helm-map (kbd "C-z") 'helm-select-action)
     (define-key helm-map (kbd "C-j") 'helm-next-line)
-    (define-key helm-map (kbd "C-k") 'helm-previous-line)
-    )
-  )
+    (define-key helm-map (kbd "C-k") 'helm-previous-line)))
 
 (use-package projectile
   :ensure t
@@ -234,8 +213,7 @@
   (setq projectile-completion-system 'helm)
   :config
   (progn
-    (projectile-global-mode))
-  )
+    (projectile-global-mode)))
 
 (use-package helm-projectile
   :ensure t
@@ -243,9 +221,7 @@
   (setq helm-projectile-fuzzy-match t)
   :config
   (progn
-    (helm-projectile-on)
-    )
-  )
+    (helm-projectile-on)))
 
 (use-package company
   :ensure t
@@ -266,8 +242,7 @@
   (define-key company-active-map (kbd "C-j") 'company-select-next)
   (define-key company-active-map (kbd "C-k") 'company-select-previous)
 
-  (setq company-idle-delay 0.4)
-  )
+  (setq company-idle-delay 0.4))
 
 (use-package evil
   :init
@@ -301,16 +276,12 @@
           "/" 'helm-projectile-ag
           "s f" 'helm-imenu
 
-          "q" 'quit-window
-          )
+          "q" 'quit-window)
         (evil-leader/set-key-for-mode 'ruby-mode
           "r r" 'ruby-send-region
           "t f" 'rspec-verify
           "t l" 'rspec-verify-single
-          "t t" 'rspec-verify-all
-          )
-        )
-      )
+          "t t" 'rspec-verify-all)))
     (evil-mode 1))
   :config
   (progn
@@ -334,10 +305,7 @@
     (use-package evil-surround
       :ensure t
       :config
-      (global-evil-surround-mode t)
-      )
-    )
-  )
+      (global-evil-surround-mode t))))
 
 ;; Hides white vertical line on splits
 (set-face-attribute 'vertical-border
@@ -348,15 +316,12 @@
 (defun my-new-project-file (new-file)
   (interactive
    (list (read-file-name "New file: " (projectile-project-root))))
-  (find-file new-file)
-  )
+  (find-file new-file))
 
 (defun my-notes-find ()
   (interactive)
   (let ((default-directory "~/Dropbox/org-notes/"))
-    (helm-find-files nil)
-    )
-  )
+    (helm-find-files nil)))
 
 (defun toggle-maximize-buffer () "Maximize buffer"
        (interactive)
@@ -369,20 +334,17 @@
 (defun my-move-lines-up ()
   (interactive)
   (transpose-lines 1)
-  (previous-line 2)
-  )
+  (previous-line 2))
 
 (defun my-move-lines-down ()
   (interactive)
   (next-line)
   (transpose-lines 1)
-  (previous-line)
-  )
+  (previous-line))
 
 (defun align-assignment ()
   (interactive)
-  (align-regexp "=")
-  )
+  (align-regexp "="))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
