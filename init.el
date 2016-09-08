@@ -67,6 +67,8 @@
 (setq-default ispell-program-name "ispell")
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
