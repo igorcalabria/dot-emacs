@@ -280,6 +280,7 @@
           "g" 'magit-status
           "/" 'helm-projectile-ag
           "s f" 'helm-imenu
+          "m t" 'what-year-is-it?
 
           "q" 'quit-window)
         (evil-leader/set-key-for-mode 'ruby-mode
@@ -350,6 +351,10 @@
 (defun align-assignment ()
   (interactive)
   (align-regexp "="))
+
+(defun what-year-is-it? ()
+  (interactive)
+  (message (current-time-string)))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
