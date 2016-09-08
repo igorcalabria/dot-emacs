@@ -62,6 +62,9 @@
 (setq-default fill-column 100)
 
 (add-hook 'org-mode-hook 'auto-fill-mode)
+(setq-default ispell-program-name "ispell")
+(setq-default ispell-dictionary "american")
+(add-hook 'text-mode-hook 'flyspell-mode)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
