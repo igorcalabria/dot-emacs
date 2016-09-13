@@ -251,8 +251,7 @@
   :init
   (setq projectile-completion-system 'helm)
   :config
-  (progn
-    (projectile-global-mode)))
+  (projectile-global-mode))
 
 (use-package helm-projectile
   :ensure t
