@@ -84,6 +84,7 @@
                                           (split-window-horizontally))
                                       (other-window 1)
                                       (xwidget-webkit-browse-url url))))
+
 (add-hook 'org-mode-hook 'auto-fill-mode)
 (setq-default ispell-program-name "ispell")
 (setq-default ispell-dictionary "american")
@@ -100,9 +101,6 @@
   :ensure t
   :config
   (setq helm-dash-common-docsets '("Clojure" "Ruby on Rails" "Ruby")))
-
-(use-package neotree
-  :ensure t)
 
 (use-package multi-term
   :ensure t
