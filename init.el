@@ -198,10 +198,10 @@
 (use-package rvm
   :ensure t)
 
-(use-package solarized-theme
+(use-package color-theme-sanityinc-tomorrow
   :ensure t
   :config
-  (load-theme 'solarized-light t))
+  (load-theme 'sanityinc-tomorrow-night t))
 
 (use-package inf-ruby
   :ensure t)
@@ -394,6 +394,7 @@
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
