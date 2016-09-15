@@ -89,13 +89,17 @@
 (setq-default ispell-program-name "ispell")
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((sh . t)
    (ruby .t)))
+
+(use-package paredit
+  :ensure t
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+  (add-hook 'clojure-mode-hook 'paredit-mode))
 
 (use-package helm-dash
   :ensure t
@@ -397,7 +401,7 @@
  '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
-    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
+    ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
  '(org-agenda-files (quote ("~/Dropbox/org-notes/trustvox.org")))
  '(org-file-apps
    (quote
