@@ -39,8 +39,11 @@
 (menu-bar-mode -1)
 (electric-pair-mode t)
 (show-paren-mode t)
-(setq org-src-fontify-natively t)
-(setq org-startup-indented t)
+
+(setq org-edit-src-content-indentation 0
+      org-src-tab-acts-natively t
+      org-src-fontify-natively t
+      org-confirm-babel-evaluate nil)
 
 (add-hook 'prog-mode-hook 'linum-mode)
 ;; CSS mode is not a prog mode
