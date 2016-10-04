@@ -180,6 +180,9 @@
 (use-package cider
   :ensure t
   :config
+  (require 'org)
+  (require 'ob-clojure)
+  (setq-default org-babel-clojure-backend 'cider)
   (setq cider-cljs-lein-repl
         "(do (require 'figwheel-sidecar.repl-api)
            (figwheel-sidecar.repl-api/start-figwheel!)
