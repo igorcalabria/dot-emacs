@@ -92,7 +92,10 @@
                                       (other-window 1)
                                       (xwidget-webkit-browse-url url))))
 
-(add-hook 'org-mode-hook 'auto-fill-mode)
+(add-hook 'org-mode-hook (lambda ()
+                           (auto-fill-mode)
+                           (org-indent-mode)))
+
 (setq-default ispell-program-name "ispell")
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
