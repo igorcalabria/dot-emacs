@@ -102,8 +102,9 @@
 
 (org-babel-do-load-languages
  'org-babel-load-languages
- '((sh . t)
-   (ruby .t)))
+ '((shell . t)
+   (ruby .t)
+   (clojure . t)))
 
 (use-package paredit
   :ensure t
