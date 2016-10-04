@@ -216,10 +216,12 @@
 (use-package rvm
   :ensure t)
 
-(use-package color-theme-sanityinc-tomorrow
+(use-package solarized-theme
   :ensure t
   :config
-  (load-theme 'sanityinc-tomorrow-night t))
+  (setq solarized-use-variable-pitch nil)
+  (setq solarized-scale-org-headlines nil)
+  (load-theme 'solarized-light t))
 
 (use-package inf-ruby
   :ensure t)
@@ -412,7 +414,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (sanityinc-tomorrow-eighties)))
  '(custom-safe-themes
    (quote
     ("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" default)))
@@ -423,6 +424,9 @@
      ("\\.mm\\'" . default)
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "evince %s"))))
+ '(package-selected-packages
+   (quote
+    (solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
  '(reftex-ref-style-default-list (quote ("Default" "Hyperref")))
  '(safe-local-variable-values (quote ((ispell-dictionary . "pt_BR")))))
 (custom-set-faces
