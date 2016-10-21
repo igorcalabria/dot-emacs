@@ -100,7 +100,12 @@
  'org-babel-load-languages
  '((shell . t)
    (ruby .t)
-   (clojure . t)))
+   (python . t)))
+
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode))
 
 (use-package paredit
   :ensure t
@@ -111,7 +116,11 @@
 (use-package helm-dash
   :ensure t
   :config
-  (setq helm-dash-common-docsets '("Clojure" "Ruby on Rails" "Ruby")))
+  (setq helm-dash-common-docsets '("Clojure"
+                                   "Ruby on Rails"
+                                   "Ruby"
+                                   "Python 2"
+                                   "Pandas")))
 
 (use-package multi-term
   :ensure t
@@ -296,7 +305,11 @@
   (define-key company-active-map (kbd "C-j") 'company-select-next)
   (define-key company-active-map (kbd "C-k") 'company-select-previous)
 
-  (setq company-idle-delay 0.4))
+  (setq company-idle-delay 0.4)
+  (use-package company-anaconda
+    :ensure t
+    :config
+    (add-to-list 'company-backends 'company-anaconda)))
 
 (use-package evil
   :init
