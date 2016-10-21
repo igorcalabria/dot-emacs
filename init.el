@@ -2,10 +2,6 @@
 (require 'cl)
 (setq package-enable-at-startup nil)
 
-;; Loads latest org mode branch
-(add-to-list 'load-path "~/org-mode/lisp")
-(require 'org)
-
 ;; packages
 (add-to-list
  'package-archives
