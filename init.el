@@ -225,8 +225,12 @@
   :ensure t
   :config
   (setq solarized-use-variable-pitch nil)
-  (setq solarized-scale-org-headlines nil)
-  (load-theme 'solarized-light t))
+  (setq solarized-scale-org-headlines nil))
+
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t))
 
 (use-package inf-ruby
   :ensure t)
