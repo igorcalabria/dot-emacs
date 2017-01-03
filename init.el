@@ -372,6 +372,7 @@
     (evil-define-key 'normal org-mode-map (kbd "M-l") 'org-metaright)
     (evil-define-key 'normal global-map (kbd "M-k") 'my-move-lines-up)
     (evil-define-key 'normal global-map (kbd "M-j") 'my-move-lines-down)
+    (evil-define-key 'normal helm-ag-mode-map (kbd "RET") 'helm-ag-mode-jump-other-window)
     (evil-set-initial-state 'term-mode 'emacs)
 
     (use-package evil-surround
@@ -476,7 +477,7 @@
      ("\\.pdf\\'" . "evince %s"))))
  '(package-selected-packages
    (quote
-    (yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
+    (groovy-mode indent-guide rbenv docker dockerfile-mode jsx-mode oauth2 yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
