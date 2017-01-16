@@ -102,6 +102,9 @@
    (ruby .t)
    (python . t)))
 
+(use-package neotree
+  :ensure t)
+
 (use-package anaconda-mode
   :ensure t
   :config
@@ -338,6 +341,7 @@
           "p n" 'my-new-project-file
           "p r" 'projectile-run-async-shell-command-in-root
           "f r" 'helm-recentf
+          "f t" 'neotree-dir
           "b b" 'helm-buffers-list
           "b n" 'evil-next-buffer
           "b p" 'evil-prev-buffer
@@ -374,6 +378,7 @@
     (evil-define-key 'normal global-map (kbd "M-j") 'my-move-lines-down)
     (evil-define-key 'normal helm-ag-mode-map (kbd "RET") 'helm-ag-mode-jump-other-window)
     (evil-set-initial-state 'term-mode 'emacs)
+    (evil-set-initial-state 'neotree-mode 'emacs)
 
     (use-package evil-surround
       :ensure t
