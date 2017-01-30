@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: commit-msg
+# key: cmsg
+# --
+${1:type}(${2:scope}): ${3:subject}
+
+${4:body}
+
+${0:footer}
