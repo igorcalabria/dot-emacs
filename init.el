@@ -80,6 +80,11 @@
    (ruby .t)
    (python . t)))
 
+(use-package markdown-mode
+  :ensure t
+  :config
+  (add-hook 'markdown-mode 'auto-fill-mode))
+
 (use-package restclient
   :ensure t
   :config
