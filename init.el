@@ -478,7 +478,6 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
- '(org-agenda-files (quote ("~/Dropbox/org-notes/trustvox.org")))
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
