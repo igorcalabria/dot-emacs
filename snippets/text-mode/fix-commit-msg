@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: fix-commit-msg
+# key: fix
+# --
+fix(${1:scope}): ${2:message}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: feat-commit-message
+# key: feat
+# --
+feat(${1:scope}): ${2:message}

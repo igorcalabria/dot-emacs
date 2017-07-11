@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: chore-commit-msgs
+# key: chore
+# --
+chore(${1:scope}): ${2:message}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: style_commit_msg
+# key: style
+# --
+style(${1:scope}): ${2:message}

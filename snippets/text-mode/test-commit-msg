@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: test-commit-msg
+# key: test
+# --
+test(${1:scope}): ${2:message}

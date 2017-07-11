@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: refactor-commit-msg
+# key: refactor
+# --
+refactor(${1:scope}): ${2:message} $0
