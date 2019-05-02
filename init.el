@@ -449,7 +449,7 @@
      ("\\.pdf\\'" . "evince %s"))))
  '(package-selected-packages
    (quote
-    (restclient neotree groovy-mode indent-guide rbenv docker dockerfile-mode jsx-mode oauth2 yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
+    (request evil-collection restclient neotree groovy-mode indent-guide rbenv docker dockerfile-mode jsx-mode oauth2 yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
