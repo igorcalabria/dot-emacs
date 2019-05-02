@@ -70,6 +70,9 @@
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+(use-package diminish
+  :ensure t)
+
 (use-package markdown-mode
   :ensure t
   :config
