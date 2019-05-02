@@ -15,7 +15,6 @@
 
 (eval-when-compile
   (require 'use-package))
-(require 'diminish)
 
 ;;General config
 (scroll-bar-mode -1)
