@@ -70,12 +70,6 @@
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((sh . t)
-   (ruby .t)
-   (python . t)))
-
 (use-package markdown-mode
   :ensure t
   :config
