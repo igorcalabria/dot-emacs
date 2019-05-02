@@ -81,11 +81,6 @@
   :config
   (add-hook 'markdown-mode 'auto-fill-mode))
 
-(use-package restclient
-  :ensure t
-  :config
-  (add-to-list 'auto-mode-alist '("\\.rest\\'" . restclient-mode)))
-
 (use-package neotree
   :ensure t)
 
@@ -115,9 +110,6 @@
   (setq-default multi-term-dedicated-select-after-open-p t))
 
 (use-package dash
-  :ensure t)
-
-(use-package clj-refactor
   :ensure t)
 
 (use-package nyan-mode
@@ -170,15 +162,7 @@
     (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))))
 
 (use-package cider
-  :ensure t
-  :config
-  (require 'org)
-  (require 'ob-clojure)
-  (setq-default org-babel-clojure-backend 'cider)
-  (setq cider-cljs-lein-repl
-        "(do (require 'figwheel-sidecar.repl-api)
-           (figwheel-sidecar.repl-api/start-figwheel!)
-           (figwheel-sidecar.repl-api/cljs-repl))"))
+  :ensure t)
 
 (use-package web-mode
   :ensure t
