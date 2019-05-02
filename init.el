@@ -66,7 +66,6 @@
                            (auto-fill-mode)
                            (org-indent-mode)))
 
-(setq-default ispell-program-name "ispell")
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
 
