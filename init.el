@@ -298,44 +298,7 @@
 
 (use-package evil
   :init
-  (progn
-    (use-package evil-leader
-      :ensure t
-      :init (global-evil-leader-mode)
-      :config
-      (progn
-        (evil-leader/set-leader "<SPC>")
-        (evil-leader/set-key ":" 'helm-M-x)
-        (evil-leader/set-key
-          "a w" `evil-ace-jump-word-mode
-          "a a" 'evil-ace-jump-char-mode
-          "w w" 'other-frame
-          "w m" 'toggle-maximize-buffer
-          "w c" 'delete-other-windows
-          "f f" 'helm-find-files
-          "f n" 'my-notes-find
-          "p f" 'helm-projectile-find-file
-          "p p" 'projectile-switch-project
-          "p n" 'my-new-project-file
-          "p r" 'projectile-run-async-shell-command-in-root
-          "f r" 'helm-recentf
-          "f t" 'neotree-dir
-          "b b" 'helm-buffers-list
-          "b n" 'evil-next-buffer
-          "b p" 'evil-prev-buffer
-          "s v" 'split-window-horizontally
-          "s h" 'split-window-vertically
-          "g" 'magit-status
-          "/" 'helm-projectile-ag
-          "s f" 'helm-imenu
-          "m t" 'what-year-is-it?
-          "q q" 'multi-term-dedicated-toggle)
-        (evil-leader/set-key-for-mode 'ruby-mode
-          "r r" 'ruby-send-region
-          "t f" 'rspec-verify
-          "t l" 'rspec-verify-single
-          "t t" 'rspec-verify-all)))
-    (evil-mode 1))
+  (evil-mode 1)
   :config
   (progn
     (evil-set-initial-state 'help-mode 'normal)
@@ -356,12 +319,51 @@
     (evil-define-key 'normal global-map (kbd "M-j") 'my-move-lines-down)
     (evil-define-key 'normal helm-ag-mode-map (kbd "RET") 'helm-ag-mode-jump-other-window)
     (evil-set-initial-state 'term-mode 'emacs)
-    (evil-set-initial-state 'neotree-mode 'emacs)
+    (evil-set-initial-state 'neotree-mode 'emacs)))
 
-    (use-package evil-surround
-      :ensure t
-      :config
-      (global-evil-surround-mode t))))
+(use-package evil-surround
+  :ensure t
+  :config
+  :after evil
+  (global-evil-surround-mode t))
+
+(use-package evil-leader
+  :ensure t
+  :init (global-evil-leader-mode)
+  :after evil
+  :config
+  (progn
+    (evil-leader/set-leader "<SPC>")
+    (evil-leader/set-key ":" 'helm-M-x)
+    (evil-leader/set-key
+      "a w" `evil-ace-jump-word-mode
+      "a a" 'evil-ace-jump-char-mode
+      "w w" 'other-frame
+      "w m" 'toggle-maximize-buffer
+      "w c" 'delete-other-windows
+      "f f" 'helm-find-files
+      "f n" 'my-notes-find
+      "p f" 'helm-projectile-find-file
+      "p p" 'projectile-switch-project
+      "p n" 'my-new-project-file
+      "p r" 'projectile-run-async-shell-command-in-root
+      "f r" 'helm-recentf
+      "f t" 'neotree-dir
+      "b b" 'helm-buffers-list
+      "b n" 'evil-next-buffer
+      "b p" 'evil-prev-buffer
+      "s v" 'split-window-horizontally
+      "s h" 'split-window-vertically
+      "g" 'magit-status
+      "/" 'helm-projectile-ag
+      "s f" 'helm-imenu
+      "m t" 'what-year-is-it?
+      "q q" 'multi-term-dedicated-toggle)
+    (evil-leader/set-key-for-mode 'ruby-mode
+      "r r" 'ruby-send-region
+      "t f" 'rspec-verify
+      "t l" 'rspec-verify-single
+      "t t" 'rspec-verify-all)))
 
 ;; Hides white vertical line on splits
 (set-face-attribute 'vertical-border
