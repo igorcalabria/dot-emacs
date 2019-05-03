@@ -43,6 +43,8 @@
       org-src-tab-acts-natively t
       org-src-fontify-natively t
       org-confirm-babel-evaluate nil)
+(org-babel-do-load-languages 'org-babel-load-languages
+    '((shell . t)))
 
 (add-hook 'prog-mode-hook 'linum-mode)
 ;; CSS mode is not a prog mode
