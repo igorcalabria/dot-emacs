@@ -32,6 +32,13 @@
 (electric-pair-mode t)
 (show-paren-mode t)
 
+(setq org-agenda-files '("~/org-notes/projects.org.gpg"
+                        "~/org-notes/study.org.gpg"))
+(setq org-refile-targets '((org-agenda-files :maxlevel . 2)
+                           ("~/org-notes/snippets.org.gpg" :maxlevel . 1)))
+(setq org-refile-use-outline-path 'file)
+(setq org-outline-path-complete-in-steps nil)
+(setq org-refile-allow-creating-parent-nodes 'confirm)
 (setq org-edit-src-content-indentation 0
       org-src-tab-acts-natively t
       org-src-fontify-natively t
