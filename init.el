@@ -78,6 +78,11 @@
 (setq-default ispell-dictionary "american")
 (add-hook 'text-mode-hook 'flyspell-mode)
 
+(use-package org-download
+  :ensure t
+  :config
+  (setq-default org-download-image-dir "~/org-notes/pictures"))
+
 (use-package diminish
   :ensure t)
 
@@ -446,6 +451,7 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-download-screenshot-method "xclip -selection clipboard -t image/png -o > %s")
  '(org-file-apps
    (quote
     ((auto-mode . emacs)
@@ -454,7 +460,7 @@
      ("\\.pdf\\'" . "evince %s"))))
  '(package-selected-packages
    (quote
-    (request evil-collection restclient neotree groovy-mode indent-guide rbenv docker dockerfile-mode jsx-mode oauth2 yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
+    (org-download request evil-collection restclient neotree groovy-mode indent-guide rbenv docker dockerfile-mode jsx-mode oauth2 yaml-mode gist ox-pandoc spacegray-theme zenburn-theme company-anaconda anaconda-mode solarized-theme nginx-mode gradle-mode git-link web-mode use-package scss-mode rvm rspec-mode org-bullets nyan-mode multi-term magit inf-ruby helm-projectile helm-dash helm-ag evil-surround evil-leader diff-hl company color-theme-sanityinc-tomorrow coffee-mode clj-refactor ace-jump-mode)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#eee8d5")
  '(pos-tip-foreground-color "#586e75")
