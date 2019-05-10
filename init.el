@@ -327,6 +327,13 @@
   :after evil
   (global-evil-surround-mode t))
 
+(use-package key-chord
+  :ensure t
+  :after evil
+  :config
+  (key-chord-mode 1)
+  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state))
+
 (use-package evil-leader
   :ensure t
   :init (global-evil-leader-mode)
