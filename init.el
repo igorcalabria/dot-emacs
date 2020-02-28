@@ -64,7 +64,11 @@
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'term-mode-hook (lambda ()
                             (yas-minor-mode -1)
-                            (setq fill-column 0)))
+                            (setq fill-column 0)
+                            (define-key term-raw-map (kbd "C-c C-k") 'toggle-term-mode)
+                            (define-key term-mode-map (kbd "C-r") 'my-term-search)
+                            (define-key term-raw-map (kbd "C-r") 'my-term-search)
+                            (define-key term-mode-map (kbd "C-c C-k") 'toggle-term-mode)))
 (setq ruby-insert-encoding-magic-comment nil)
 (setq css-indent-offset 2)
 (global-hl-line-mode t)
@@ -414,6 +418,27 @@
 (defun what-year-is-it? ()
   (interactive)
   (message (current-time-string)))
+
+(defun toggle-term-normal-mode ()
+  (interactive)
+  (term-line-mode)
+  (evil-normal-state)
+  (previous-line))
+
+(defun toggle-term-char-mode ()
+  (interactive)
+  (evil-emacs-state)
+  (term-char-mode))
+
+(defun toggle-term-mode ()
+  (interactive)
+  (if (term-in-char-mode)
+      (toggle-term-normal-mode)
+    (toggle-term-char-mode)))
+
+(defun my-term-search ()
+  (interactive)
+  (term-send-raw-string "\C-r"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
