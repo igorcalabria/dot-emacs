@@ -46,10 +46,6 @@
 (org-babel-do-load-languages 'org-babel-load-languages
     '((shell . t)))
 
-(add-hook 'prog-mode-hook 'linum-mode)
-;; CSS mode is not a prog mode
-(add-hook 'css-mode-hook 'linum-mode)
-
 (set-face-attribute 'default nil
                     :family "DejaVuSansMono" :height 110 :weight 'normal)
 (blink-cursor-mode 0)
