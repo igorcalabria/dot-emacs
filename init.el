@@ -94,36 +94,16 @@
 (use-package neotree
   :ensure t)
 
-(use-package anaconda-mode
-  :ensure t
-  :config
-  (add-hook 'python-mode-hook 'anaconda-mode))
-
 (use-package paredit
   :ensure t
   :config
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
   (add-hook 'clojure-mode-hook 'paredit-mode))
 
-(use-package helm-dash
-  :ensure t
-  :config
-  (setq helm-dash-common-docsets '("Clojure"
-                                   "Ruby on Rails"
-                                   "Ruby"
-                                   "Python 2"
-                                   "Pandas")))
-
 (use-package multi-term
   :ensure t
   :config
   (setq-default multi-term-dedicated-select-after-open-p t))
-
-(use-package dash
-  :ensure t)
-
-(use-package nyan-mode
-  :ensure t)
 
 (use-package tex-mode
   :ensure t
@@ -164,12 +144,6 @@
   :config
   (add-hook 'prog-mode-hook 'diff-hl-mode)
   (add-hook 'css-mode-hook 'diff-hl-mode))
-
-(use-package scss-mode
-  :ensure t
-  :config
-  (progn
-    (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))))
 
 (use-package cider
   :ensure t)
@@ -520,11 +494,10 @@
      (300 . "#7CB8BB")
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
+     (360 . "#DC8CC3")))
  '(vc-annotate-very-old-color "#DC8CC3")
  '(weechat-color-list
-   (quote
-    (unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496")))
+   '(unspecified "#fdf6e3" "#eee8d5" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#657b83" "#839496"))
  '(xterm-color-names
    ["#eee8d5" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#073642"])
  '(xterm-color-names-bright
